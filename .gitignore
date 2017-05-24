@@ -1,3 +1,6 @@
 .idea/
 agility-course-tracker.iml
 target/
+.classpath
+.project
+.settings/
