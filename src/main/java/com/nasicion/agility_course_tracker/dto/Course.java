@@ -1,9 +1,13 @@
 package com.nasicion.agility_course_tracker.dto;
 
+import java.util.Date;
+
 /**
  * Created by guillermo.nasi on 23/05/2017.
  */
 public class Course {
+    private String judge;
+    private Date date;
     private Double lenght;
     private Double standardCourseTime;
     private Double maximiumCourseTime;

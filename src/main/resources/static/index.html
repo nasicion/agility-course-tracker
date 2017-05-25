@@ -3,11 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Agility Course Tracker Beta</title>
-    <script src="js/angular.min.js" type="application/javascript"></script>
-    <script src="js/angular-route.min.js" type="application/javascript"></script>
+    <script src="js/external/angular.min.js" type="application/javascript"></script>
+    <script src="js/external/angular-route.min.js" type="application/javascript"></script>
+    <script src="js/external/jquery-3.2.1.slim.min.js" type="application/javascript"></script>
+    <script src="js/external/bootstrap.min.js" type="application/javascript"></script>
+
+    <link href="css/external/bootstrap-theme.css" type="text/css" rel="stylesheet"/>
+    <link href="css/external/bootstrap.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Agility Course Tracker</h1>
-    <a href="greeting?name=User">test this</a>
+    <div class="jumbotron text-center">
+        <h1>Agility Course Tracker</h1>
+        <p>Make table work easy!</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>Nueva Pista</h3>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Pista
+                </button>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Combinado
+                </button>
+            </div>
+            <div class="col-sm-4">
+                <h3>Column 2</h3>
+                <p>Lorem ipsum dolor..</p>
+                <p>Ut enim ad..</p>
+            </div>
+            <div class="col-sm-4">
+                <h3>Column 3</h3>
+                <p>Lorem ipsum dolor..</p>
+                <p>Ut enim ad..</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js" type="application/javascript"></script>
 </body>
 </html>
