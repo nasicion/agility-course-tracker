@@ -1,11 +1,12 @@
 package com.nasicion.agility_course_tracker;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import java.util.Arrays;
 
 /**
  * Created by guillermo.nasi on 23/05/2017.
@@ -13,9 +14,19 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @SpringBootApplication()
 public class AgilityCourseTracker {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(AgilityCourseTracker.class);
+
     public static void main(String[] args) {
         SpringApplication.run(AgilityCourseTracker.class, args);
-        openBrowser();
+
+        LOGGER.debug("amount of args: " + args.length);
+        Arrays.stream(args).forEach(arg -> LOGGER.debug("arg: " + arg));
+
+        Boolean openBrowser = args.length > 0 ? Boolean.valueOf(args[0]) : false;
+
+        LOGGER.debug("Open Browser: " + openBrowser);
+        if (openBrowser)
+            openBrowser();
     }
 
     /**
