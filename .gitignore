@@ -5,3 +5,4 @@ target/
 .project
 .settings/
 src/main/frontend/node_modules/
+src/main/frontend/node/
