@@ -1,18 +1,14 @@
 /**
  * Created by gnasi on 5/27/17.
  */
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+
+import {Course} from './model/course';
 
 @Component({
-    selector : 'app-root',
     templateUrl : './course.component.html'
 })
 
-export  class Course {
-  judge : string
-  date : Date;
-  lenght : number;
-  standardCourseTime : number;
-  maximiumCourseTime : number;
-  speed : number;
+export class CourseComponent {
+  @Input() course:Course;
 }
