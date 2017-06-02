@@ -1,9 +1,51 @@
-<label>Juez:</label><input type="text" [(ngModel)]="course.judge">
+<div class="course">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="input-group">
+        <span class="input-group-addon">Sr/a.</span>
+        <input placeholder="Juez/a" type="text" [(ngModel)]="course.judge" class="form-control">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Largo</span>
+        <input placeholder="Largo"
+               type="number"
+               [(ngModel)]="course.lenght"
+               (ngModelChange)="updateTimes()"
+               class="form-control">
+        <span class="input-group-addon">metros</span>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Velocidad</span>
+        <input placeholder="Velocidad"
+               type="number"
+               [(ngModel)]="course.speed"
+               (ngModelChange)="updateTimes()"
+               class="form-control">
+        <span class="input-group-addon">m/s</span>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">T.R.S.</span>
+        <input placeholder="T.R.S."
+               type="number" [(ngModel)]="course.standardCourseTime"
+               class="form-control">
+        <span class="input-group-addon">segundos</span>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">T.R.M.</span>
+        <input placeholder="T.R.M." type="number" [(ngModel)]="course.maximiumCourseTime" class="form-control">
+        <span class="input-group-addon">segundos</span>
+      </div>
+    </div>
+    <div class="col-md-7 result">
+      <span class="course-result-title">Resultados</span>
+      <div>COMING SOON!</div>
+    </div>
+    <div class="col-md-1">
+      <button (click)="save()" type="button" class="btn btn-default" aria-label="Salvar">
+        <span class="glyphicon glyphicon-save" aria-hidden="true"></span>Salvar
+      </button>
 
-<label>Largo:</label><input type="number" [(ngModel)]="course.lenght"><span class="input-group-addon">metros</span>
+    </div>
+  </div>
 
-<label>Velocidad:</label><input type="number"  [(ngModel)]="course.speed"><span class="input-group-addon">m/s</span>
-
-<label>TRS:</label><input type="number" [(ngModel)]="course.standardCourseTime"><span class="input-group-addon">segundos</span>
-
-<label>TRM:</label><input type="number" [(ngModel)]="course.maximiumCourseTime"><span class="input-group-addon">segundos</span>
+</div>

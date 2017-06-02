@@ -1,0 +1,11 @@
+.app-container {
+  padding: 0px 12px;
+}
+
+.course .input-group {
+  margin: 4px 0px;
+}
+
+.course .result .course-result-title {
+  font-size: large;
+}
