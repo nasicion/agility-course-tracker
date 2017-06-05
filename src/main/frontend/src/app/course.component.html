@@ -20,7 +20,8 @@
                type="number"
                [(ngModel)]="course.speed"
                (ngModelChange)="updateTimes()"
-               class="form-control">
+               class="form-control"
+                id="input_speed">
         <span class="input-group-addon">m/s</span>
       </div>
       <div class="input-group">
@@ -48,4 +49,7 @@
     </div>
   </div>
 
+  <div class="runs-container bs">
+    <runs [courseId] = "course.id"></runs>
+  </div>
 </div>

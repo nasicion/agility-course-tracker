@@ -9,3 +9,14 @@
 .course .result .course-result-title {
   font-size: large;
 }
+
+footer {
+  margin: 0 auto;
+  position: fixed;
+  width: 100% !important;
+  bottom: 2em;
+}
+
+.runs-container table {
+  width: 100%;
+}

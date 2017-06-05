@@ -1,0 +1,30 @@
+
+<div class="table-responsive">
+<table class="table-striped">
+  <thead>
+    <tr>
+      <td>Orden</td>
+      <td>Perro</td>
+      <td>Gu&iacute;a</td>
+      <td>Faltas</td>
+      <td>Negativas</td>
+      <td>Total</td>
+      <td>Puntos</td>
+      <td>Tiempo</td>
+      <td>Calificación</td>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let run of runs">
+    <td>{{run.order}}</td>
+    <td>{{run.dog}}</td>
+    <td>{{run.guide}}</td>
+    <td>{{run.faults}}</td>
+    <td>{{run.refusals}}</td>
+    <td>{{run.faults + run.refusals}}</td>
+    <td>{{(run.faults + run.refusals) * 5}}</td>
+    <td>{{run.time}}</td>
+    <td>Coming soon</td>
+  </tr>
+</table>
+</div>

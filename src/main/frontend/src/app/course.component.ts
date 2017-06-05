@@ -18,6 +18,7 @@ export class CourseComponent {
     this.course = new Course();
   }
 
+
   save() {
     this.courseService.save(this.course);
   }
