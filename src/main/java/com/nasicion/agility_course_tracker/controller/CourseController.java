@@ -27,7 +27,7 @@ public class CourseController {
     @Autowired
     private CourseDao courseDao;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public @ResponseBody Course createRun(@RequestBody Course course) {
         courseDao.save(course);
         LOGGER.debug(new GsonBuilder().setPrettyPrinting().create().toJson(course));

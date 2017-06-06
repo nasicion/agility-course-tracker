@@ -19,8 +19,12 @@ export class CourseComponent {
   }
 
 
-  save() {
-    this.courseService.save(this.course);
+  save() : void {
+    this.courseService.save(this.course)
+      .then(
+        (course: Course) =>
+          this.course = course
+      );
   }
 
   updateTimes() {

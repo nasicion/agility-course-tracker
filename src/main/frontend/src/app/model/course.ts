@@ -1,7 +1,7 @@
 import {Run} from './run';
 
 export  class Course {
-  id : number = 0;
+  id : number = undefined;
   judge : string ;
   date : Date;
   lenght : number;
