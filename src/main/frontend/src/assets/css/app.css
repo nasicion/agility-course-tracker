@@ -11,12 +11,18 @@
 }
 
 footer {
-  margin: 0 auto;
-  position: fixed;
-  width: 100% !important;
-  bottom: 2em;
+  margin: 2em auto;
+}
+
+.runs-container .runs-actions {
+  text-align: right;
+  margin: 2em 0;
 }
 
 .runs-container table {
   width: 100%;
+}
+
+.runs-container table thead {
+  font-weight: bold;
 }

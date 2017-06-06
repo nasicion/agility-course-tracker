@@ -1,7 +1,7 @@
 /**
  * Created by gnasi on 5/27/17.
  */
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 import {Run} from './model/run';
 
@@ -13,17 +13,12 @@ import {RunService} from './service/run.service';
   providers: [RunService]
 })
 
-export class RunsComponent implements OnInit {
-  @Input() courseId:number;
-  runs:Run[];
+export class RunsComponent {
+  @Input() runs:Run[];
   run:Run;
 
   constructor(private runService:RunService){
 
-  }
-
-  ngOnInit(): void {
-    this.loadRuns(this.courseId);
   }
 
   loadRuns(courseId:number) {

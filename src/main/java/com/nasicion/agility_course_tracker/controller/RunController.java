@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by gnasi on 5/25/17.
  */
 @Controller
-@RequestMapping("/run")
+@RequestMapping("/api/run")
 public class RunController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RunController.class);

@@ -43,13 +43,11 @@
     </div>
     <div class="col-md-1">
       <button (click)="save()" type="button" class="btn btn-default" aria-label="Salvar">
-        <span class="glyphicon glyphicon-save" aria-hidden="true"></span>Salvar
+        <span class="glyphicon glyphicon-save" aria-hidden="true"></span> Salvar
       </button>
 
     </div>
   </div>
 
-  <div class="runs-container bs">
-    <runs [courseId] = "course.id"></runs>
-  </div>
+  <runs [runs] = "course.runs"></runs>
 </div>
