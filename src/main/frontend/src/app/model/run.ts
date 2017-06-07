@@ -1,13 +1,17 @@
-export  class Run {
+export class Run {
   courseId: number;
   order: number;
-  dog : string ;
-  guide : string;
-  faults : number = 0;
-  refusals : number = 0;
-  time : number;
+  dog: string;
+  guide: string;
+  faults: number = 0;
+  refusals: number = 0;
+  time: number;
+  category: number;
+  position: number;
 
-  constructor(courseId: number, order: number, dog: string, guide: string, faults: number, refusals: number, time: number) {
+  constructor(courseId: number, order: number, dog: string,
+              guide: string, faults: number, refusals: number,
+              time: number, category: number, position: number) {
     this.courseId = courseId;
     this.order = order;
     this.dog = dog;
@@ -15,5 +19,7 @@ export  class Run {
     this.faults = faults;
     this.refusals = refusals;
     this.time = time;
+    this.category = category;
+    this.position = position;
   }
 }

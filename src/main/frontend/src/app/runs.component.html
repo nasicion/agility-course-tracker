@@ -1,6 +1,6 @@
 <div class="runs-container">
   <div class="runs-actions">
-    <button type="button" class="btn btn-default">Agregar Dupla</button>
+    <button type="button" class="btn btn-default" (click) = "addRun()">Agregar Dupla</button>
     <button type="button" class="btn btn-default">Quitar Dupla</button>
   </div>
   <div class="table-responsive">
@@ -15,21 +15,109 @@
         <td>Total</td>
         <td>Puntos</td>
         <td>Tiempo</td>
+        <td>Puesto</td>
         <td>Calificación</td>
       </tr>
       </thead>
+      <tbody>
+        <tr class="category-header">
+          <td colspan="10">Mini</td>
+        </tr>
+        <ng-container *ngFor="let run of runs">
+          <ng-container *ngIf="run.category == 0">
+            <tr>
+              <td>{{run.order}}</td>
+              <td>
+                <input type="text" ngModel="{{run.dog}}">
+              </td>
+              <td>
+                <input type="text" ngModel="{{run.guide}}"/>
+              </td>
+              <td>
+                <input class="input-faults text-right" type="text" ngModel="{{run.faults}}"/>
+              </td>
+              <td>
+                <input class="input-refusals text-right" type="text" ngModel="{{run.refusals}}"/>
+              </td>
+              <td>{{run.faults + run.refusals}}</td>
+              <td>{{(run.faults + run.refusals) * 5}}</td>
+              <td>
+                <input class="input-time text-right" type="text" ngModel="{{run.time}}"/>
+              </td>
+              <td>
+                {{run.position}}
+              </td>
+              <td>Coming soon</td>
+            </tr>
+          </ng-container>
+        </ng-container>
 
-      <tr *ngFor="let run of runs">
-        <td>{{run.order}}</td>
-        <td>{{run.dog}}</td>
-        <td>{{run.guide}}</td>
-        <td>{{run.faults}}</td>
-        <td>{{run.refusals}}</td>
-        <td>{{run.faults + run.refusals}}</td>
-        <td>{{(run.faults + run.refusals) * 5}}</td>
-        <td>{{run.time}}</td>
-        <td>Coming soon</td>
-      </tr>
+        <tr class="category-header">
+          <td colspan="10">Midi</td>
+        </tr>
+        <ng-container *ngFor="let run of runs">
+          <ng-container *ngIf="run.category == 1">
+            <tr>
+              <td>{{run.order}}</td>
+              <td>
+                <input type="text" ngModel="{{run.dog}}">
+              </td>
+              <td>
+                <input type="text" ngModel="{{run.guide}}"/>
+              </td>
+              <td>
+                <input class="input-faults text-right" type="text" ngModel="{{run.faults}}"/>
+              </td>
+              <td>
+                <input class="input-refusals text-right" type="text" ngModel="{{run.refusals}}"/>
+              </td>
+              <td>{{run.faults + run.refusals}}</td>
+              <td>{{(run.faults + run.refusals) * 5}}</td>
+              <td>
+                <input class="input-time text-right" type="text" ngModel="{{run.time}}"/>
+              </td>
+              <td>
+                {{run.position}}
+              </td>
+              <td>Coming soon</td>
+            </tr>
+          </ng-container>
+        </ng-container>
+        <tr class="category-header">
+          <td colspan="10">Standard</td>
+        </tr>
+        <ng-container *ngFor="let run of runs">
+          <ng-container *ngIf="run.category == 2">
+            <tr>
+              <td>{{run.order}}</td>
+              <td>
+                <input type="text" ngModel="{{run.dog}}">
+              </td>
+              <td>
+                <input type="text" ngModel="{{run.guide}}"/>
+              </td>
+              <td>
+                <input class="input-faults text-right" type="text" ngModel="{{run.faults}}"/>
+              </td>
+              <td>
+                <input class="input-refusals text-right" type="text" ngModel="{{run.refusals}}"/>
+              </td>
+              <td>{{run.faults + run.refusals}}</td>
+              <td>{{(run.faults + run.refusals) * 5}}</td>
+              <td>
+                <input class="input-time text-right" type="text" ngModel="{{run.time}}"/>
+              </td>
+              <td>
+                {{run.position}}
+              </td>
+              <td>Coming soon</td>
+            </tr>
+          </ng-container>
+        </ng-container>
+
+
+
+      </tbody>
     </table>
   </div>
 </div>

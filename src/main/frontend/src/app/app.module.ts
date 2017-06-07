@@ -12,6 +12,7 @@ import { RunsComponent } from './runs.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'course', component: CourseComponent },
+  { path: 'course/:courseId', component: CourseComponent },
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
 ];
 

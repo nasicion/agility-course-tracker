@@ -26,3 +26,20 @@ footer {
 .runs-container table thead {
   font-weight: bold;
 }
+
+.runs-container table .category-header, .runs-container table .category-header:hover {
+  background: rgba(0, 100, 148, 1) !important;
+  color: white;
+  font-weight: bold;
+}
+
+.input-faults, .input-refusals, .input-time {
+  width: 3em;
+  border: none;
+  border-bottom: 1px solid gray;
+  background: transparent;
+}
+
+.input-time {
+  width: 4em;
+}
