@@ -1,4 +1,6 @@
-package com.nasicion.agility_course_tracker.dto;
+package com.nasicion.agility_course_tracker.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -17,9 +19,17 @@ public class Run implements Comparable<Run>{
     private Integer faults;
     @Column(name="refusals")
     private Integer refusals;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="course")
-    private Course course;
+    @Column(name="course_id")
+    private Long courseId;
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name = "category")
+    private Category category;
+    @Column(name = "position")
+    private Integer position;
+    @Column(name = "guide")
+    private String guide;
+    @Column(name = "dog")
+    private String dog;
 
     public Run() {
     }
@@ -65,7 +75,11 @@ public class Run implements Comparable<Run>{
                 ", time=" + time +
                 ", faults=" + faults +
                 ", refusals=" + refusals +
-                ", course=" + course +
+                ", courseId=" + courseId +
+                ", category=" + category +
+                ", position=" + position +
+                ", guide='" + guide + '\'' +
+                ", dog='" + dog + '\'' +
                 '}';
     }
 
@@ -101,11 +115,43 @@ public class Run implements Comparable<Run>{
         this.id = id;
     }
 
-    public Course getCourse() {
-        return course;
+    public Long getCourseId() {
+        return courseId;
     }
 
-    public void setCourse(Course course) {
-        this.course = course;
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public String getGuide() {
+        return guide;
+    }
+
+    public void setGuide(String guide) {
+        this.guide = guide;
+    }
+
+    public String getDog() {
+        return dog;
+    }
+
+    public void setDog(String dog) {
+        this.dog = dog;
     }
 }

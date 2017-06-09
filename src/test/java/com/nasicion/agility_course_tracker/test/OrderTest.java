@@ -1,7 +1,7 @@
 package com.nasicion.agility_course_tracker.test;
 
 
-import com.nasicion.agility_course_tracker.dto.Run;
+import com.nasicion.agility_course_tracker.model.Run;
 import org.junit.Assert;
 import org.junit.Test;
 

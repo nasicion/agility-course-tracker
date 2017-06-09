@@ -20,11 +20,11 @@
       </tr>
       </thead>
       <tbody>
+        <ng-container *ngIf="small.length > 0">
         <tr class="category-header">
           <td colspan="10">Mini</td>
         </tr>
-        <ng-container *ngFor="let run of runs">
-          <ng-container *ngIf="run.category == 0">
+        <ng-container *ngFor="let run of small">
             <tr>
               <td>{{run.order}}</td>
               <td>
@@ -52,11 +52,11 @@
           </ng-container>
         </ng-container>
 
+        <ng-container *ngIf="medium.length > 0">
         <tr class="category-header">
           <td colspan="10">Midi</td>
         </tr>
-        <ng-container *ngFor="let run of runs">
-          <ng-container *ngIf="run.category == 1">
+        <ng-container *ngFor="let run of medium">
             <tr>
               <td>{{run.order}}</td>
               <td>
@@ -83,11 +83,12 @@
             </tr>
           </ng-container>
         </ng-container>
+
+        <ng-container *ngIf="large.length > 0">
         <tr class="category-header">
           <td colspan="10">Standard</td>
         </tr>
-        <ng-container *ngFor="let run of runs">
-          <ng-container *ngIf="run.category == 2">
+        <ng-container *ngFor="let run of large">
             <tr>
               <td>{{run.order}}</td>
               <td>
@@ -114,9 +115,6 @@
             </tr>
           </ng-container>
         </ng-container>
-
-
-
       </tbody>
     </table>
   </div>

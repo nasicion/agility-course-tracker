@@ -1,6 +1,6 @@
 package com.nasicion.agility_course_tracker.dao;
 
-import com.nasicion.agility_course_tracker.dto.Course;
+import com.nasicion.agility_course_tracker.model.Course;
 import org.springframework.data.repository.CrudRepository;
 
 /**

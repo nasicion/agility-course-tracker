@@ -1,4 +1,4 @@
-package com.nasicion.agility_course_tracker.dto;
+package com.nasicion.agility_course_tracker.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -26,8 +26,8 @@ public class Course {
     private Double maximiumCourseTime;
     @Column
     private Double speed;
-    @OneToMany(mappedBy = "course")
-    private List<Run> runs;
+//    @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
+//    private List<Run> runs;
 
     public Course(String judge, Date date, Double lenght, Double standardCourseTime, Double maximiumCourseTime, Double speed) {
         this.judge = judge;
@@ -36,7 +36,7 @@ public class Course {
         this.standardCourseTime = standardCourseTime;
         this.maximiumCourseTime = maximiumCourseTime;
         this.speed = speed;
-        this.runs = new ArrayList<Run>();
+//        this.runs = new ArrayList<Run>();
     }
 
     public Course() {
@@ -91,13 +91,13 @@ public class Course {
         this.date = date;
     }
 
-    public List<Run> getRuns() {
-        return runs;
-    }
+//    public List<Run> getRuns() {
+//        return runs;
+//    }
 
-    public void setRuns(List<Run> runs) {
-        this.runs = runs;
-    }
+//    public void setRuns(List<Run> runs) {
+//        this.runs = runs;
+//    }
 
     public Long getId() {
         return id;
@@ -105,5 +105,19 @@ public class Course {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public String  toString() {
+        return "Course{" +
+                "id=" + id +
+                ", judge='" + judge + '\'' +
+                ", date=" + date +
+                ", lenght=" + lenght +
+                ", standardCourseTime=" + standardCourseTime +
+                ", maximiumCourseTime=" + maximiumCourseTime +
+                ", speed=" + speed +
+//                ", runs=" + runs +
+                '}';
     }
 }

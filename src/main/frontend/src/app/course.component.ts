@@ -1,8 +1,8 @@
 /**
  * Created by gnasi on 5/27/17.
  */
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 import { Course } from './model/course';
 import { CourseService } from './service/course.service';
@@ -16,18 +16,23 @@ export class CourseComponent implements OnInit {
   @Input() course:Course;
 
   constructor(private courseService:CourseService, private route:ActivatedRoute){
+    let courseId = this.route.snapshot.params['courseId'];
+    if(courseId != undefined) {
+       this.loadCourse(courseId);
+     } else {
+     this.course = new Course();
+     }
   }
 
   ngOnInit() {
-    this.course = new Course();
-    let courseId = this.route.snapshot.params['courseId'];
-    if(courseId != undefined) {
-      this.loadCourse(courseId);
+    this.course = this.route.snapshot.data['course'];
+    if(this.course == undefined) {
+      this.course = new Course();
     }
   }
 
-  loadCourse(courseId:number) : void {
-    this.courseService.get(courseId)
+  loadCourse(courseId:number) : Promise<Course> {
+    return this.courseService.get(courseId)
       .then((course : Course) => this.course = course);
   }
 

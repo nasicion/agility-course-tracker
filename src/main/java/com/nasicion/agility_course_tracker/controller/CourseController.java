@@ -1,7 +1,7 @@
 package com.nasicion.agility_course_tracker.controller;
 
 import com.nasicion.agility_course_tracker.dao.CourseDao;
-import com.nasicion.agility_course_tracker.dto.Course;
+import com.nasicion.agility_course_tracker.model.Course;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

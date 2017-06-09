@@ -2,33 +2,53 @@
  * Created by guillermo.nasi on 02/06/2017.
  */
 import {Injectable} from '@angular/core'
+import {Http, Headers} from "@angular/http";
+
+import "rxjs/add/operator/toPromise";
+
+import {Constants} from '../constants';
 
 import {Run} from '../model/run'
 
 @Injectable()
 export class RunService {
 
+  private runUrl = Constants.apiUrl + '/run';  // URL to web api
+  private headers = new Headers({'Content-Type': 'application/json'});
+
+  constructor(private http:Http){}
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
+
+  /**
+   * \
+   * @param run
+   */
   save(run:Run) : void {
     console.log('Saving run:');
     console.log(run);
   }
 
-  getCourseRuns(courseId:number) : Run[] {
-    return [
-      new Run(0, 1, "dog", "guide", 0, 0, 45.5, 0, 1),
-      new Run(0, 2, "dog", "guide", 0, 0, 45.5, 0, 2),
-      new Run(0, 3, "dog", "guide", 0, 0, 45.5, 0, 3),
-      new Run(0, 4, "dog", "guide", 0, 0, 45.5, 0, 4),
-      new Run(0, 5, "dog", "guide", 0, 0, 45.5, 0, 5),
-      new Run(0, 6, "dog", "guide", 0, 0, 45.5, 1, 6),
-      new Run(0, 7, "dog", "guide", 0, 0, 45.5, 2, 7),
-      new Run(0, 8, "dog", "guide", 0, 0, 45.5, 0, 8),
-      new Run(0, 9, "dog", "guide", 0, 0, 45.5, 0, 9),
-      new Run(0, 10, "dog", "guide", 0, 0, 45.5, 1, 10),
-      new Run(0, 11, "dog", "guide", 0, 0, 45.5, 2, 11),
-      new Run(0, 12, "dog", "guide", 0, 0, 45.5, 1, 12),
-      new Run(0, 13, "dog", "guide", 0, 0, 45.5, 1, 13)
-    ];
-
+  /**
+   *
+   * @param courseId
+   * @returns {Run[]}
+   */
+  getCourseRuns(courseId:number) : Promise<any> {
+    return this.http.get(this.runUrl + '/course/' + courseId)
+      .toPromise()
+      .then(response => {
+        // console.log(response.json());
+        return response.json();
+      })
+      .catch(this.handleError);
   }
+}
+
+export class RunsResponse {
+  key : number;
+  runs: Run[];
 }
