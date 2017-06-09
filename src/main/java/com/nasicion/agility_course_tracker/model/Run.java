@@ -30,6 +30,9 @@ public class Run implements Comparable<Run>{
     private String guide;
     @Column(name = "dog")
     private String dog;
+    @Column(name = "qualification")
+    @Enumerated(value = EnumType.ORDINAL)
+    private Qualification qualification;
 
     public Run() {
     }
@@ -80,6 +83,7 @@ public class Run implements Comparable<Run>{
                 ", position=" + position +
                 ", guide='" + guide + '\'' +
                 ", dog='" + dog + '\'' +
+                ", qualification=" + qualification +
                 '}';
     }
 
@@ -153,5 +157,13 @@ public class Run implements Comparable<Run>{
 
     public void setDog(String dog) {
         this.dog = dog;
+    }
+
+    public Qualification getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(Qualification qualification) {
+        this.qualification = qualification;
     }
 }

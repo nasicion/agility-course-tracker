@@ -2,7 +2,6 @@ import {Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/rou
 import {CourseService} from "./service/course.service";
 import {Injectable} from "@angular/core";
 import {Course} from "./model/course";
-import {DummyService} from "./service/dummy.service";
 /**
  * Created by gnasi on 6/9/17.
  */

@@ -1,6 +1,7 @@
 package com.nasicion.agility_course_tracker.controller;
 
 import com.nasicion.agility_course_tracker.model.Run;
+import com.nasicion.agility_course_tracker.service.CourseService;
 import com.nasicion.agility_course_tracker.service.RunService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,8 @@ public class RunController {
 
     @Autowired
     private RunService runService;
+    @Autowired
+    private CourseService courseService;
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public @ResponseBody Run createRun(@RequestBody Run run) {
@@ -34,6 +37,7 @@ public class RunController {
     public @ResponseBody Map<Integer, List<Run>> getCourseRuns(@PathVariable Long courseId) {
         LOGGER.debug("Calling /api/run/course/" + courseId);
 
+        courseService.updateResults(courseId);
         Map<Integer, List<Run>> runs = runService.getCourseRuns(courseId);
 
         return runs;

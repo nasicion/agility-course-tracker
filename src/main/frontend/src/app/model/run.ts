@@ -8,10 +8,12 @@ export class Run {
   time: number;
   category: number;
   position: number;
+  qualification: string;
 
   constructor(courseId: number, order: number, dog: string,
               guide: string, faults: number, refusals: number,
-              time: number, category: number, position: number) {
+              time: number, category: number, position: number,
+              qualification: string) {
     this.courseId = courseId;
     this.order = order;
     this.dog = dog;
@@ -21,5 +23,6 @@ export class Run {
     this.time = time;
     this.category = category;
     this.position = position;
+    this.qualification = qualification;
   }
 }
