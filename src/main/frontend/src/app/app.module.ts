@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { CourseComponent } from './course.component';
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
   providers: [CourseService,CourseResolver],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
  * Created by gnasi on 5/27/17.
  */
 import {Component, Input, OnInit} from '@angular/core';
-import { BootstrapModalModule } from 'ng2-bootstrap-modal';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 import {Run} from './model/run';
 
@@ -21,8 +21,9 @@ export class RunsComponent implements  OnInit {
   medium:Run[] = [];
   large:Run[] = [];
   run:Run;
+  closeResult: string;
 
-  constructor(private runService:RunService){
+  constructor(private runService:RunService, private modalService:NgbModal){
 
   }
 
@@ -51,5 +52,23 @@ export class RunsComponent implements  OnInit {
 
   updateScores() {
     console.log("Updating scores");
+  }
+
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 }
