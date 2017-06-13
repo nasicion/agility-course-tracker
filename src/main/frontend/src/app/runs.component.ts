@@ -55,7 +55,15 @@ export class RunsComponent implements  OnInit {
   }
 
   open(content) {
-    this.modalService.open(content).result.then((result) => {
+    this.run = new Run(this.course.id, 0, "",
+      "", null, null,
+      null, null, null,
+      null);
+    this.modalService.open(
+      content,
+      {backdrop:"static",
+      keyboard: false}
+    ).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

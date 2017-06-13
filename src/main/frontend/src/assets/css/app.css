@@ -43,3 +43,9 @@ footer {
 .input-time {
   width: 4em;
 }
+
+
+/** bootstra overwriting **/
+.btn {
+  cursor: pointer;
+}

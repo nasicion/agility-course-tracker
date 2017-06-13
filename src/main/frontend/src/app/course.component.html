@@ -11,7 +11,7 @@
                type="number"
                [(ngModel)]="course.lenght"
                (ngModelChange)="updateTimes()"
-               class="form-control">
+               class="form-control text-right">
         <span class="input-group-addon">metros</span>
       </div>
       <div class="input-group">
@@ -20,7 +20,7 @@
                type="number"
                [(ngModel)]="course.speed"
                (ngModelChange)="updateTimes()"
-               class="form-control"
+               class="form-control text-right"
                 id="input_speed">
         <span class="input-group-addon">m/s</span>
       </div>
@@ -28,12 +28,12 @@
         <span class="input-group-addon">T.R.S.</span>
         <input placeholder="T.R.S."
                type="number" [(ngModel)]="course.standardCourseTime"
-               class="form-control">
+               class="form-control text-right">
         <span class="input-group-addon">segundos</span>
       </div>
       <div class="input-group">
         <span class="input-group-addon">T.R.M.</span>
-        <input placeholder="T.R.M." type="number" [(ngModel)]="course.maximiumCourseTime" class="form-control">
+        <input placeholder="T.R.M." type="number" [(ngModel)]="course.maximiumCourseTime" class="form-control text-right">
         <span class="input-group-addon">segundos</span>
       </div>
     </div>
